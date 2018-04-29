@@ -1,0 +1,33 @@
+html, body {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  position: relative;
+  font-family: Helvetica, sans-serif;
+  color: white;
+  min-height: 100vh;
+}
+
+.works {
+  display: flex;
+  background: rgb(115, 156, 231);
+  flex: 1 70%;
+}
+
+.side {
+  display: flex;
+  flex-direction: column;
+}
+
+.vision {
+  display: flex;
+  background: rgb(197, 91, 91);
+}
+
+.about {
+  display: flex;
+  background: rgb(53, 21, 160);
+}
