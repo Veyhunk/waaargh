@@ -11,23 +11,50 @@ body {
   min-height: 100vh;
 }
 
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
 .works {
   display: flex;
-  background: rgb(115, 156, 231);
-  flex: 1 70%;
+  align-self: stretch;
+  flex-direction: column;
+  background: #a8d0e6;
+  flex: 2 0 65%;
+  padding: 20px;
+  justify-content: space-between;
+}
+
+h1 {
+  font-size: 35px;
+  padding-left: 35px;
+}
+
+h2 {
+  text-transform: uppercase;
 }
 
 .side {
   display: flex;
+  flex: 1 0 35%;
   flex-direction: column;
 }
 
 .vision {
   display: flex;
-  background: rgb(197, 91, 91);
+  flex-direction: column;
+  flex: 1 0 50%;
+  background: #fa7774;
+  padding-left: 20px;
+  justify-content: space-between;
 }
 
 .about {
   display: flex;
-  background: rgb(53, 21, 160);
+  flex-direction: column;
+  flex: 1 0 50%;
+  background: #2c3970;
+  padding-left: 20px;
+  justify-content: space-between;
 }
