@@ -31,6 +31,69 @@
       <canvas width="1056" height="794"></canvas>
     </div>
     <!-- Some script here -->
+    <script>
+      var points = [];
+      var rafID  = null;
+
+      var guiVars = function() {
+        this.totalPoints     = 6;
+        this.viscosity       = 20;
+        this.mouseDist       = 80;
+        this.damping         = 0.15;
+        this.showIndicators  = false;
+        this.leftColor       = '#a8d0e6';
+        this.rightColor      = '#f76c6c';
+      }
+
+      var vars = new guiVars();
+
+      window.onload = function() {
+        var gui = new dat.GUI();
+        gui.add(vars, 'viscosity', 10, 500);
+        gui.add(vars, 'mouseDist', 20, 400);
+        gui.add(vars, 'damping', 0.01, 0.5);
+        gui.addColor(vars, 'leftColor');
+        gui.addColor(vars, 'righColor');
+
+        controller.onChange(function() {
+          cancelAnimationFrame(rafID);
+          initCanvas();
+        });
+      };
+
+      /**
+       * Mouse handler
+       */
+      var mouseX = 0,
+          mouseY = 0,
+          mouseLastX = 0,
+          mouseLastY = 0,
+          mouseDirectionX = 0,
+          mouseDirectionY = 0,
+          mouseSpeedX = 0,
+          mouseSpeedY = 0;
+
+      // Get the mouse direction
+      function mouseDirection(e) {
+        if(mouseX < e.pageX)
+          mouseDirectionX = 1;
+        else if(mouseX > e.pageX)
+          mouseDirectionX = -1;
+        else
+          mouseDirectionX = 0;
+
+        if(mouseY < e.pageY)
+          mouseDirectionY = 1;
+        else if(mouseY > e.pageY)
+          mouseDirectionY = -1;
+        else
+          mouseDirectionY = 0;
+
+        mouseX = e.pageX;
+        mouseY = e.pageY;
+      }
+      document.addEventListener('mousemove', mouseDirection);
+    </script>
   </div>
 
   <div class="page-loader"></div>

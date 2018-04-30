@@ -58,3 +58,7 @@ h2 {
   padding-left: 20px;
   justify-content: space-between;
 }
+
+canvas {
+  position: relative;
+}
